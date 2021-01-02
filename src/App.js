@@ -10,14 +10,14 @@ function App() {
   }
 
   function wordCount() {
-    let textArray = text.split(" ");
-    return textArray.length;
+    let textArray = text.trim().split(" ");
+    return textArray.length === 1 ? 0 : textArray.length;
   }
 
   return (
     <div>
       <h1>How fast do you type?</h1>
-      <textarea onChange={wordCount} value={text} />
+      <textarea onChange={handleChange} value={text} />
       <h4>Time remaining: ???</h4>
       <button onClick={wordCount}>Start</button>
       <h1>Word count: ???</h1>
